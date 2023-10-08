@@ -63,13 +63,18 @@ export const ContactForm = () => {
         <FormStyled>
           <FieldWrapper>
             <Label htmlFor="name">Name</Label>
-            <Field id="name" name="name" placeholder="Jane" />
+            <Field id="name" name="name" placeholder="Jane" maxlength="50" />
             <ErrorMessageStyled component="div" name="name" />
           </FieldWrapper>
 
           <FieldWrapper>
             <Label htmlFor="phone">Number</Label>
-            <Field id="phone" name="phone" placeholder="123-456-7890" />
+            <Field
+              id="phone"
+              name="phone"
+              placeholder="123-456-7890"
+              maxlength="12"
+            />
             <ErrorMessageStyled component="div" name="phone" />
           </FieldWrapper>
 
