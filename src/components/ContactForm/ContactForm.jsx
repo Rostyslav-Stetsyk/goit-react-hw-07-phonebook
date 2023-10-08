@@ -18,7 +18,7 @@ const contactSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Required'),
   phone: Yup.string()
-    .length(12, `Number must have 12 symbol`)
+    .length(12, `Number must have 12 symbols`)
     .trim()
     .matches(
       /[0-9]{3}-[0-9]{3}-[0-9]{4}/,
