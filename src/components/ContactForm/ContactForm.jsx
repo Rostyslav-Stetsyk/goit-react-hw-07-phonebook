@@ -30,7 +30,8 @@ const contactSchema = Yup.object().shape({
 export const ContactForm = () => {
   const contacts = useSelector(selectContacts);
   const dispach = useDispatch();
-  const onSubmit = contact => {
+
+  const onSubmit = (contact, actions) => {
     if (
       contacts.list.some(el => {
         if (el.name === contact.name) {
@@ -46,6 +47,7 @@ export const ContactForm = () => {
     )
       return;
     dispach(addContact(contact));
+    actions.resetForm();
   };
 
   return (
@@ -56,7 +58,7 @@ export const ContactForm = () => {
           phone: '',
         }}
         validationSchema={contactSchema}
-        onSubmit={values => onSubmit(values)}
+        onSubmit={onSubmit}
       >
         <FormStyled>
           <FieldWrapper>
